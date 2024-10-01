@@ -1,27 +1,29 @@
-import Alpine from 'alpinejs';
-window.Alpine = Alpine;
+// No és necessari importar Alpine.js aquí si ja ho has fet a l'HTML
 
-Alpine.start();
-let currentIndex = 0;
 const carousel = document.querySelector('.carousel');
-const prevBtn=document.querySelector('.prev-btn')
-const nextBtn=document.querySelector('.next-btn')
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+let index = 0;
+
 function showNext() {
-
-
-    currentIndex++;
-    if (currentIndex>carousel.children.length -1){
-        currentIndex=0
+    index++;
+    if (index > carousel.children.length - 1) {
+        index = 0;
     }
-    carousel.style.transform = translateX('-${currentIndex * 100}%');
+    carousel.style.transform = `translateX(-${index * 100}%)`; // Aquí fem servir cometes invertides
 }
 
 function showPrev() {
-    currentIndex--;
-    if (currentIndex < 0) {
-        currentIndex = carousel.children.length - 1
+    index--;
+    if (index < 0) {
+        index = carousel.children.length - 1;
     }
-    carousel.style.transform = translateX('-${currentIndex * 100}%');
+    carousel.style.transform = `translateX(-${index * 100}%)`; // Aquí fem servir cometes invertides
 }
-nextBtn.addEventListener('click', showNext)
-prevBtn.addEventListener('click', showPrev)
+
+// Assegura't que el DOM estigui carregat abans d'afegir els esdeveniments
+document.addEventListener('DOMContentLoaded', () => {
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+});

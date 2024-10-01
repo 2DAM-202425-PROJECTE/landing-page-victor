@@ -5,9 +5,17 @@
 /* Contenidor del carrusel */
 .carousel-container {
     position: relative;
-    max-width: 600px;
+    max-width: 400px; /* o qualsevol amplada que desitgis */
     margin: auto;
     overflow: hidden;
+}
+
+.carousel-title {
+    text-align: center;   /* Centra el text */
+    margin: 20px 0;       /* Marges superiors i inferiors */
+    font-size: 32px;      /* Augmenta la mida de la font */
+    font-weight: bold;    /* Fes el text en negreta */
+    color: #333;          /* Color del text */
 }
 
 /* Estils del carrusel */
@@ -17,10 +25,10 @@
 }
 
 /* Imatges del carrusel */
-.carousel-image {
-    min-width: 100%;
-    height: 400px;
-    object-fit: cover;
+.carousel img {
+    min-width: 100%; /* Manté cada imatge a l'amplada del contenidor */
+    height: auto; /* Ajusta l'altura automàticament per mantenir la proporció */
+    object-fit: contain; /* Utilitza 'contain' per assegurar que la imatge s'ajusti sense tallar-se */
 }
 
 /* Botons de navegació */
