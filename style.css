@@ -55,3 +55,33 @@
 .prev-btn:hover, .next-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+.bg-custom1 {
+    background-image: url('fondo.gif');
+    background-size: cover; /* Fa que la imatge cobreixi tota la secció */
+    background-position: center; /* Centra la imatge */
+    background-repeat: no-repeat; /* Evita que la imatge es repeteixi */
+    padding: 60px 0; /* Ajusta el padding segons sigui necessari */
+}
+#sobre-mi {
+    padding: 50px;
+    text-align: center;
+}
+
+#sobre-mi-image {
+    max-width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out; /* Transició per a la visibilitat i opacitat */
+    opacity: 0; /* Comença com a completament transparent */
+    visibility: hidden; /* No es pot veure */
+}
+
+.web-text, .ciberseguretat-text, .base-dades-text {
+    transform: translateX(-100%); /* Comença des de l'esquerra fora de la vista */
+    opacity: 0; /* Comença invisible */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Transicions per a l'efecte d'entrada */
+}
+
+.visible {
+    transform: translateX(0); /* Movem el text a la seva posició original */
+    opacity: 1; /* Fem el text visible */
+}
