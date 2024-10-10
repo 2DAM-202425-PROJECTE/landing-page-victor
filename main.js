@@ -101,3 +101,22 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', checkVisibility);
     checkVisibility(); // Comprovem la visibilitat al carregar la pàgina
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const stats = document.querySelectorAll('.stat-item');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.5 // L'element ha d'estar almenys al 50% dins de la pantalla per activar l'animació
+    });
+
+    stats.forEach(stat => {
+        observer.observe(stat);
+    });
+});
